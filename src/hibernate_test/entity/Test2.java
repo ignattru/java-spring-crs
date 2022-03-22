@@ -13,16 +13,18 @@ public class Test2 {
                 .buildSessionFactory();
         try {
             Session session = factory.getCurrentSession();
-            Employee emp = new Employee("Ignat", "Evgenov", "IT", 500);
+            Employee emp = new Employee("Alina2", "Test", "Sales", 500);
             session.beginTransaction();
             session.save(emp);
-            session.getTransaction().commit();
+           // session.getTransaction().commit();
 
             int myId = emp.getId();
-            session = factory.getCurrentSession();
-            session.beginTransaction();
+            //session = factory.getCurrentSession();
+            //session.beginTransaction();
             Employee employee = session.get(Employee.class, myId);
             session.getTransaction().commit();
+            System.out.println(employee);
+
         }
         finally {
             factory.close();
