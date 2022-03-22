@@ -20,10 +20,13 @@ public class Test2 {
 
             int myId = emp.getId();
             session = factory.getCurrentSession();
+            session.beginTransaction();
+            Employee employee = session.get(Employee.class, myId);
+            session.getTransaction().commit();
         }
         finally {
             factory.close();
-            //testrepo
+
         }
     }
 }
