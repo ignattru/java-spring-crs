@@ -18,8 +18,6 @@ public class Test4 {
             session.beginTransaction();
             Employee emp = session.get(Employee.class, 2);
             emp.setSalary(10000);
-
-
             session.getTransaction().commit();
         }
         finally {
