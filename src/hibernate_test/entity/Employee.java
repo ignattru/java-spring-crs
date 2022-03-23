@@ -22,12 +22,17 @@ public class Employee {
 
 
 
-    public Employee(String name, String surname, String department, int salary) {
-        this.name = name;
-        this.surname = surname;
-        this.department = department;
-        this.salary = salary;
-    }
+    public Employee() { }
+
+ /***** constructor with arguments(early this make a trouble where compiling )
+  *     public Employee(String name, String surname, String department, int salary) {
+  *         this.name = name;
+  *         this.surname = surname;
+  *         this.department = department;
+  *         this.salary = salary;
+  *     }
+  *
+  * */
 
     @Override
     public String toString() {
